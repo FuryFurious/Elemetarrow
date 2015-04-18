@@ -167,20 +167,24 @@ public class PlayerMovement : MonoBehaviour {
 
     public void CreateShootArrow()
     {
-        Vector3 fromTo = mousePos - transform.position;
-        float length = new Vector2(fromTo.x, fromTo.y).magnitude;
-        float rotation = Mathf.Atan2(fromTo.y, fromTo.x) * Mathf.Rad2Deg;
+        if (cooldown <= 0.0f)
+        {
+            Debug.Log("Shot");
 
-        GameObject obj = (GameObject)Instantiate(arrowPrefab, new Vector3(arrowStartTransform.position.x, arrowStartTransform.position.y, 0.0f), Quaternion.identity);
-        //obj.transform.position = transform.position;
-        ArrowMovement arrow = obj.GetComponent<ArrowMovement>();
+            Vector3 fromTo = mousePos - transform.position;
+            float length = new Vector2(fromTo.x, fromTo.y).magnitude;
+            float rotation = Mathf.Atan2(fromTo.y, fromTo.x) * Mathf.Rad2Deg;
 
-        float speed = Mathf.Clamp(length, minArrowSpeed, maxArrowSpeed);
+            GameObject obj = (GameObject)Instantiate(arrowPrefab, new Vector3(arrowStartTransform.position.x, arrowStartTransform.position.y, 0.0f), Quaternion.identity);
+            //obj.transform.position = transform.position;
+            ArrowMovement arrow = obj.GetComponent<ArrowMovement>();
 
-        arrow.direction = new Vector2(fromTo.x / length, fromTo.y / length) * speed;
+            float speed = Mathf.Clamp(length, minArrowSpeed, maxArrowSpeed);
 
+            arrow.direction = new Vector2(fromTo.x / length, fromTo.y / length) * speed;
 
-        cooldown = totalCooldown;
-        //Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);
+            cooldown = totalCooldown;
+            //Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);
+        }
     }
 }
