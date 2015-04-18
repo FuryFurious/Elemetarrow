@@ -4,6 +4,8 @@ using System.Collections;
 public class ArrowMovement : MonoBehaviour {
 
     public float speed = 12.0f;
+
+    public float lifeTime = 5.0f;
     public Vector2 direction;
 
     private bool isFlying = true;
@@ -12,7 +14,6 @@ public class ArrowMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _rigidBody = GetComponent<Rigidbody2D>();
-
         _rigidBody.AddForce(direction * speed);
 	}
 	
@@ -27,9 +28,24 @@ public class ArrowMovement : MonoBehaviour {
 
 	}
 
-    void OnTriggerEnter2D()
+    void Update()
+    {
+        lifeTime -= Time.deltaTime;
+
+        if (lifeTime <= 0)
+            Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
     {
         isFlying = false;
+
+        if (!collider.gameObject.isStatic)
+        {
+            collider.attachedRigidbody.AddForce(_rigidBody.velocity * 5.0f);
+            gameObject.transform.parent = collider.transform;
+        }
+
         _rigidBody.isKinematic = true;
     }
 }
