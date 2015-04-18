@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 086ae5056988a954fbdbcedd76092071
-timeCreated: 1429374157
+guid: 8256e97abb9392548bdb655a42785b8c
+timeCreated: 1429375815
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -104,15 +104,15 @@ ModelImporter:
     - serializedVersion: 16
       name: RunForward
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 230
+      firstFrame: 20
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -202,15 +202,15 @@ ModelImporter:
     - serializedVersion: 16
       name: RunBackward
       takeName: Take 001
-      firstFrame: 0
+      firstFrame: 170
       lastFrame: 230
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -300,8 +300,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 230
+      firstFrame: 90
+      lastFrame: 110
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -398,15 +398,15 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 230
+      firstFrame: 140
+      lastFrame: 160
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       loopTime: 0
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -496,8 +496,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Shoot
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 230
+      firstFrame: 120
+      lastFrame: 130
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

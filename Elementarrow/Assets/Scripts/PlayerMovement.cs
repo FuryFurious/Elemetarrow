@@ -68,11 +68,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             animator.SetTrigger("Aim");
 
-
             Vector3 fromTo = mousePos - transform.position;
             float rotation = Mathf.Atan2(fromTo.y, fromTo.x) * Mathf.Rad2Deg;
 
-            GameObject obj = (GameObject)Instantiate(arrowPrefab,transform.position,Quaternion.identity);
+            GameObject obj = (GameObject)Instantiate(arrowPrefab, arrowStartTransform.position, Quaternion.identity);
             //obj.transform.position = transform.position;
             ArrowMovement arrow = obj.GetComponent<ArrowMovement>();
             arrow.direction = new Vector2(fromTo.x, fromTo.y);
