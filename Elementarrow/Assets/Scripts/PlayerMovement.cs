@@ -83,6 +83,10 @@ public class PlayerMovement : MonoBehaviour {
 
         
 
+            GameObject obj = (GameObject)Instantiate(arrowPrefab, arrowStartTransform.position, Quaternion.identity);
+            //obj.transform.position = transform.position;
+            ArrowMovement arrow = obj.GetComponent<ArrowMovement>();
+            arrow.direction = new Vector2(fromTo.x, fromTo.y);
 		if (Input.GetButtonDown("ChangeRight"))	{
 			curSkill = (curSkill+1)% maxSkill;
 		}
