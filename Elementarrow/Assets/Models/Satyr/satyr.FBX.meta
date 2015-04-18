@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c6695129594f9bd419d0749781543a91
-timeCreated: 1429358215
+guid: 8256e97abb9392548bdb655a42785b8c
+timeCreated: 1429375815
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -78,10 +78,14 @@ ModelImporter:
     400068: SpineLow
     400070: SpinHigh
     4300000: Box001
-    7400000: Aim
-    7400002: Run
+    7400000: RunForward
+    7400002: RunBackward
+    7400004: Jump
+    7400006: Idle
+    7400008: Shoot
+    7400010: Stand
+    7400012: InAir
     9500000: //RootNode
-    11100000: //RootNode
     13700000: Box001
   materials:
     importMaterials: 1
@@ -92,7 +96,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -100,17 +104,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Aim
+      name: RunForward
       takeName: Take 001
-      firstFrame: 120
-      lastFrame: 130
+      firstFrame: 20
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -128,33 +132,33 @@ ModelImporter:
       - path: Box001
         weight: 1
       - path: RootNode
-        weight: 0
+        weight: 1
       - path: RootNode/Bip001 Footsteps
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow
         weight: 1
       - path: RootNode/Pelvis/SpineLow/LeftTigh
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe/RightToeNub
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/RightTigh
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe/LeftToeNub
-        weight: 0
+        weight: 1
       - path: RootNode/Pelvis/SpineLow/SpinHigh
         weight: 1
       - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck
@@ -198,10 +202,500 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Run
+      name: RunBackward
       takeName: Take 001
-      firstFrame: 20
-      lastFrame: 80
+      firstFrame: 170
+      lastFrame: 230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Bip001 Footsteps
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe/RightToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe/LeftToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/HeadNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar/LeftEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar/RightEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger/LeftFingerNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger/RightFingerNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Bip001 Footsteps
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe/RightToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe/LeftToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/HeadNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar/LeftEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar/RightEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger/LeftFingerNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger/RightFingerNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 140
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Bip001 Footsteps
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe/RightToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe/LeftToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/HeadNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar/LeftEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar/RightEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger/LeftFingerNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger/RightFingerNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shoot
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Bip001 Footsteps
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe/RightToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe/LeftToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/HeadNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar/LeftEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar/RightEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger/LeftFingerNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger/RightFingerNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Stand
+      takeName: Take 001
+      firstFrame: 9
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Bip001 Footsteps
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe/RightToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe/LeftToeNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/HeadNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/LeftEar/LeftEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/Head/RightEar/RightEarNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/LeftShoulder/LeftUpperArm/LeftForearm/LeftHand/LeftFinger/LeftFingerNub
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger
+        weight: 1
+      - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck/RightShoulder/RightUpperArm/RightForearm/RightHand/RightFinger/RightFingerNub
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: InAir
+      takeName: Take 001
+      firstFrame: 109
+      lastFrame: 110
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
