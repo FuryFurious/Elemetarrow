@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     public float cooldown = 0.5f;
 
     public Object arrowPrefab;
+    public Transform arrowStartTransform;
 
     private Camera mainCamera;
     private float totalCooldown;
@@ -18,13 +19,23 @@ public class PlayerMovement : MonoBehaviour {
 	private Pausemanager pausemanager;
 	private  int maxSkill = 3;
 
+    private Animator animator;
+    private GameObject mesh;
 	public static bool paused;
 	public static int curSkill;
 
   
 
+    private LookDirection direction = LookDirection.Right;
+
+    enum LookDirection {Left, Right };
+
 	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+        mesh = transform.FindChild("satyr").gameObject;
+        animator = transform.FindChild("satyr").GetComponent<Animator>();
+
         mainCamera = Camera.main;
         _rigidBody = GetComponent<Rigidbody2D>();
         totalCooldown = cooldown;
@@ -35,7 +46,8 @@ public class PlayerMovement : MonoBehaviour {
 
 
         SavePoint.currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
-	}
+
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () 
@@ -59,11 +71,17 @@ public class PlayerMovement : MonoBehaviour {
     void Update()
     {
 		if (Input.GetButtonDown("Pause")){
-
 			cooldown = 0.1f;
 			paused = !paused;
 			pausemanager.Pause ();
 		}
+        mousePos = mainCamera.ScreenToWorldPoint(mousePos);
+
+        if (Input.GetButtonDown("Fire1") && cooldown <= 0.0f)
+        {
+            animator.SetTrigger("Aim");
+
+
 
 		if (Input.GetButtonDown("ChangeRight"))	{
 			curSkill = (curSkill+1)% maxSkill;
@@ -80,14 +98,27 @@ public class PlayerMovement : MonoBehaviour {
 				//obj.transform.position = transform.position;
 				ArrowMovement arrow = obj.GetComponent<ArrowMovement> ();
 				arrow.direction = new Vector2 (fromTo.x, fromTo.y);
-  
 
 				cooldown = totalCooldown;
 				//Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);
 		}
 
-		if (cooldown > 0.0f)
-				cooldown -= Time.deltaTime;
+        if (mousePos.x < transform.position.x && direction == LookDirection.Right)
+        {
+            direction = LookDirection.Left;
+            mesh.transform.rotation = Quaternion.Euler(0.0f, 270.0f, 0.0f);
+        }
+
+        else if (mousePos.x > transform.position.x && direction == LookDirection.Left)
+        {
+            direction = LookDirection.Right;
+            mesh.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+        }
+
+
+
+        if(cooldown > 0.0f)
+            cooldown -= Time.deltaTime;
 
 
      

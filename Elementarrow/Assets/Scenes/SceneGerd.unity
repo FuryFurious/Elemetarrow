@@ -243,12 +243,12 @@ GameObject:
   - 23: {fileID: 1254415587}
   - 61: {fileID: 1254415586}
   - 50: {fileID: 1254415585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!50 &1254415585
 Rigidbody2D:
@@ -423,7 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29ac87c8377e44448e6093233110fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathDepth: -5
   movementSpeed: 10
   jumpHeight: 120
   cooldown: .5
   arrowPrefab: {fileID: 119914, guid: 0b840e9cc32fb9340b57b2a115001d3e, type: 2}
+  upperBackBone: {fileID: 0}
