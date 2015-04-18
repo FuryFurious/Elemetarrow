@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour {
     public Object arrowPrefab;
     public Transform arrowStartTransform;
 
+    public Animator bowAnimator;
+
     private Camera mainCamera;
     private float totalCooldown;
     private Rigidbody2D _rigidBody;
@@ -133,6 +135,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Fire1") && cooldown <= 0.0f)
         {
             animator.SetTrigger("Shoot");
+            bowAnimator.SetTrigger("Shoot");
         }
 
         if (mousePos.x < transform.position.x && direction == LookDirection.Right)

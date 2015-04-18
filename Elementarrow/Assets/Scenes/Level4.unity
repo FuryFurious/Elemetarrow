@@ -553,6 +553,7 @@ MonoBehaviour:
   jumpHeight: 260
   cooldown: .5
   arrowPrefab: {fileID: 160728, guid: 16630ab3567ecf54b87cdc7398b9267b, type: 2}
+  arrowStartTransform: {fileID: 0}
 --- !u!1001 &1876805979
 Prefab:
   m_ObjectHideFlags: 0
