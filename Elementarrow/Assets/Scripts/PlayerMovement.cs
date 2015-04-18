@@ -21,14 +21,13 @@ public class PlayerMovement : MonoBehaviour {
 
     private Animator animator;
     private GameObject mesh;
+
+	private LookDirection direction = LookDirection.Right;
+
 	public static bool paused;
 	public static int curSkill;
 
-  
-
-    private LookDirection direction = LookDirection.Right;
-
-    enum LookDirection {Left, Right };
+	enum LookDirection {Left, Right };
 
 	// Use this for initialization
     void Start()
@@ -70,28 +69,29 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
+		Vector3 mousePos = Input.mousePosition;
+		mousePos.z = -mainCamera.transform.position.z;
+		mousePos = mainCamera.ScreenToWorldPoint(mousePos);
+
 		if (Input.GetButtonDown("Pause")){
 			cooldown = 0.1f;
 			paused = !paused;
 			pausemanager.Pause ();
 		}
-        mousePos = mainCamera.ScreenToWorldPoint(mousePos);
 
-        if (Input.GetButtonDown("Fire1") && cooldown <= 0.0f)
-        {
-            animator.SetTrigger("Aim");
+        
 
-
+        
 
 		if (Input.GetButtonDown("ChangeRight"))	{
 			curSkill = (curSkill+1)% maxSkill;
 		}
 
 		if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
-				Vector3 mousePos = Input.mousePosition;
-				mousePos.z = -mainCamera.transform.position.z;
+				
+				
 
-				Vector3 fromTo = mainCamera.ScreenToWorldPoint (mousePos) - transform.position;
+				Vector3 fromTo = mousePos - transform.position;
 				float rotation = Mathf.Atan2 (fromTo.y, fromTo.x) * Mathf.Rad2Deg;
 
 				GameObject obj = (GameObject)Instantiate (arrowPrefab, transform.position, Quaternion.identity);
@@ -128,5 +128,6 @@ public class PlayerMovement : MonoBehaviour {
 				transform.position = new Vector3 (SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
 		}
 
-    }
+
+	}
 }
