@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29ac87c8377e44448e6093233110fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  jumpSpeed: 12
+  movementSpeed: 10
+  jumpHeight: 120
+  cooldown: .5
   arrowPrefab: {fileID: 119914, guid: 0b840e9cc32fb9340b57b2a115001d3e, type: 2}

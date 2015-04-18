@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour {
 
+    public float deathDepth = -5.0f;
     public float movementSpeed = 5.0f;
     public float jumpHeight = 120.0f;
     public float cooldown = 0.5f;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     private float totalCooldown;
     private Rigidbody2D _rigidBody;
     private bool isJumping = false;
+
   
 
 	// Use this for initialization
@@ -21,7 +23,9 @@ public class PlayerMovement : MonoBehaviour {
         mainCamera = Camera.main;
         _rigidBody = GetComponent<Rigidbody2D>();
         totalCooldown = cooldown;
-        cooldown = 0.0f;      
+        cooldown = 0.0f;
+
+        SavePoint.currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
 	}
 	
 	// Update is called once per frame
@@ -65,5 +69,14 @@ public class PlayerMovement : MonoBehaviour {
 
         if(cooldown > 0.0f)
             cooldown -= Time.deltaTime;
+
+
+     
+        if (transform.position.y <= deathDepth)
+        {
+          //  Debug.Log(transform.position.y);
+
+            transform.position = new Vector3(SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
+        }
     }
 }

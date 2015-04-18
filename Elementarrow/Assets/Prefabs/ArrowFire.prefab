@@ -11,6 +11,7 @@ GameObject:
   - 50: {fileID: 5093386}
   - 58: {fileID: 5849392}
   - 114: {fileID: 11431844}
+  - 108: {fileID: 10857416}
   m_Layer: 9
   m_Name: ArrowFire
   m_TagString: Untagged
@@ -28,7 +29,6 @@ GameObject:
   - 4: {fileID: 437902}
   - 33: {fileID: 3390058}
   - 23: {fileID: 2384170}
-  - 114: {fileID: 11483550}
   - 114: {fileID: 11471652}
   - 199: {fileID: 19980956}
   - 198: {fileID: 19852492}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .200000003, z: 0}
+  m_LocalPosition: {x: 0, y: .200000003, z: -.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 467920}
@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.52494049, y: .779569626, z: 2.97193289}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 437902}
@@ -229,7 +229,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!58 &5849392
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -243,6 +243,38 @@ CircleCollider2D:
   m_Offset: {x: .100000001, y: 0}
   serializedVersion: 2
   m_Radius: .100000001
+--- !u!108 &10857416
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119914}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 2
+  m_Color: {r: 1, g: .806896567, b: 0, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_NormalBias: .400000006
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11431844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 120
+  lifeTime: 5
   direction: {x: 0, y: 0}
 --- !u!114 &11471652
 MonoBehaviour:
@@ -268,19 +301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 1
---- !u!114 &11483550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29014cd42b6d273408e0ceefd336c0b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minDuration: 15
-  maxDuration: 20
 --- !u!198 &19815424
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3340,7 +3360,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 3
   m_MaxParticleSize: .5
   m_CameraVelocityScale: 0
