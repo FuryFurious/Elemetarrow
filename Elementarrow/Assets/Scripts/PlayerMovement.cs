@@ -15,6 +15,11 @@ public class PlayerMovement : MonoBehaviour {
     private float totalCooldown;
     private Rigidbody2D _rigidBody;
     private bool isJumping = false;
+	private Pausemanager pausemanager;
+	private  int maxSkill = 3;
+
+	public static bool paused;
+	public static int curSkill;
 
   
 
@@ -24,6 +29,10 @@ public class PlayerMovement : MonoBehaviour {
         _rigidBody = GetComponent<Rigidbody2D>();
         totalCooldown = cooldown;
         cooldown = 0.0f;
+		pausemanager = FindObjectOfType (typeof(Pausemanager)) as Pausemanager;
+		paused = false;
+		curSkill = 0;
+
 
         SavePoint.currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
 	}
@@ -49,34 +58,44 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && cooldown <= 0.0f)
-        {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = -mainCamera.transform.position.z;
+		if (Input.GetButtonDown("Pause")){
 
-            Vector3 fromTo = mainCamera.ScreenToWorldPoint(mousePos) - transform.position;
-            float rotation = Mathf.Atan2(fromTo.y, fromTo.x) * Mathf.Rad2Deg;
+			cooldown = 0.1f;
+			paused = !paused;
+			pausemanager.Pause ();
+		}
 
-            GameObject obj = (GameObject)Instantiate(arrowPrefab,transform.position,Quaternion.identity);
-            //obj.transform.position = transform.position;
-            ArrowMovement arrow = obj.GetComponent<ArrowMovement>();
-            arrow.direction = new Vector2(fromTo.x, fromTo.y);
+		if (Input.GetButtonDown("ChangeRight"))	{
+			curSkill = (curSkill+1)% maxSkill;
+		}
+
+		if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
+				Vector3 mousePos = Input.mousePosition;
+				mousePos.z = -mainCamera.transform.position.z;
+
+				Vector3 fromTo = mainCamera.ScreenToWorldPoint (mousePos) - transform.position;
+				float rotation = Mathf.Atan2 (fromTo.y, fromTo.x) * Mathf.Rad2Deg;
+
+				GameObject obj = (GameObject)Instantiate (arrowPrefab, transform.position, Quaternion.identity);
+				//obj.transform.position = transform.position;
+				ArrowMovement arrow = obj.GetComponent<ArrowMovement> ();
+				arrow.direction = new Vector2 (fromTo.x, fromTo.y);
   
 
-            cooldown = totalCooldown;
-            //Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);
-        }
+				cooldown = totalCooldown;
+				//Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);
+		}
 
-        if(cooldown > 0.0f)
-            cooldown -= Time.deltaTime;
+		if (cooldown > 0.0f)
+				cooldown -= Time.deltaTime;
 
 
      
-        if (transform.position.y <= deathDepth)
-        {
-          //  Debug.Log(transform.position.y);
+		if (transform.position.y <= deathDepth) {
+				//  Debug.Log(transform.position.y);
 
-            transform.position = new Vector3(SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
-        }
+				transform.position = new Vector3 (SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
+		}
+
     }
 }

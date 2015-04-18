@@ -4,4 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SceneJarek.unity
+  - enabled: 1
+    path: Assets/Scenes/LoadScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/SceneKai.unity
+  - enabled: 1
+    path: Assets/Scenes/SceneKai - Kopie.unity
