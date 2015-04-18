@@ -16,17 +16,22 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D _rigidBody;
     private bool isJumping = false;
 
-  
+    private Animator animator;
+    public Transform upperBackBone;
 
 	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+        animator = transform.FindChild("satyr").GetComponent<Animator>();
+
         mainCamera = Camera.main;
         _rigidBody = GetComponent<Rigidbody2D>();
         totalCooldown = cooldown;
         cooldown = 0.0f;
 
         SavePoint.currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
-	}
+
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () 
@@ -49,8 +54,12 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
+
         if (Input.GetButtonDown("Fire1") && cooldown <= 0.0f)
         {
+            animator.SetTrigger("Aim");
+          
+
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = -mainCamera.transform.position.z;
 
@@ -61,7 +70,7 @@ public class PlayerMovement : MonoBehaviour {
             //obj.transform.position = transform.position;
             ArrowMovement arrow = obj.GetComponent<ArrowMovement>();
             arrow.direction = new Vector2(fromTo.x, fromTo.y);
-  
+            upperBackBone.rotation = Quaternion.AngleAxis(rotation, Vector3.forward);
 
             cooldown = totalCooldown;
             //Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);

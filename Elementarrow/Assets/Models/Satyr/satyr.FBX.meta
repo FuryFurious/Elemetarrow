@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 929157e6ea5f66043b95c45f6feefd43
-timeCreated: 1429349078
+guid: c6695129594f9bd419d0749781543a91
+timeCreated: 1429358215
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -78,9 +78,10 @@ ModelImporter:
     400068: SpineLow
     400070: SpinHigh
     4300000: Box001
-    7400000: Run
-    7400002: Jump
+    7400000: Aim
+    7400002: Run
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Box001
   materials:
     importMaterials: 1
@@ -91,7 +92,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -99,17 +100,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Run
+      name: Aim
       takeName: Take 001
-      firstFrame: 20
-      lastFrame: 80
+      firstFrame: 120
+      lastFrame: 130
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -127,33 +128,33 @@ ModelImporter:
       - path: Box001
         weight: 1
       - path: RootNode
-        weight: 1
+        weight: 0
       - path: RootNode/Bip001 Footsteps
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow
         weight: 1
       - path: RootNode/Pelvis/SpineLow/LeftTigh
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/LeftTigh/LeftCalf/LeftFoot/LeftToe/RightToeNub
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/RightTigh
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/RightTigh/RightCalf/RightFoot/RightToe/LeftToeNub
-        weight: 1
+        weight: 0
       - path: RootNode/Pelvis/SpineLow/SpinHigh
         weight: 1
       - path: RootNode/Pelvis/SpineLow/SpinHigh/Neck
@@ -197,17 +198,17 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Jump
+      name: Run
       takeName: Take 001
-      firstFrame: 90
-      lastFrame: 110
+      firstFrame: 20
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
