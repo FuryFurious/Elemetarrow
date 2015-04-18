@@ -324,6 +324,18 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11485222, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
+      propertyPath: normalArrow
+      value: 
+      objectReference: {fileID: 126402, guid: af234b5bbe981944ca3b1f119166c40a, type: 2}
+    - target: {fileID: 11485222, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
+      propertyPath: fireArrow
+      value: 
+      objectReference: {fileID: 119914, guid: 0b840e9cc32fb9340b57b2a115001d3e, type: 2}
+    - target: {fileID: 11485222, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
+      propertyPath: airArrow
+      value: 
+      objectReference: {fileID: 160728, guid: 16630ab3567ecf54b87cdc7398b9267b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
   m_IsPrefabParent: 0
