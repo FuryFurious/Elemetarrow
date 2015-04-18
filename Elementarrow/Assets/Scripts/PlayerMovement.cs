@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour {
     public float cooldown = 0.5f;
 
     public Object arrowPrefab;
+	public Object normalArrow;
+	public Object fireArrow;
+	public Object airArrow;
+
     public Transform arrowStartTransform;
 
     private Camera mainCamera;
@@ -81,15 +85,29 @@ public class PlayerMovement : MonoBehaviour {
 
         
 
-        
+		if (Input.GetAxis ("MouseScrollWheelDown") > 0.9) {
+			curSkill = (curSkill-1);
 
-            GameObject obj = (GameObject)Instantiate(arrowPrefab, arrowStartTransform.position, Quaternion.identity);
-            //obj.transform.position = transform.position;
-            ArrowMovement arrow = obj.GetComponent<ArrowMovement>();
-            arrow.direction = new Vector2(fromTo.x, fromTo.y);
-		if (Input.GetButtonDown("ChangeRight"))	{
+			if (curSkill < 0){
+					curSkill = maxSkill-1;
+			}
+
+					
+
+
+		}
+		if (Input.GetAxis ("MouseScrollWheelUp") > 0.9) {
 			curSkill = (curSkill+1)% maxSkill;
 		}
+
+		if (curSkill == 0)
+			arrowPrefab = normalArrow;
+
+		if (curSkill == 1)
+			arrowPrefab = fireArrow;
+
+		if (curSkill == 2)
+			arrowPrefab = normalArrow;
 
 		if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
 				
