@@ -310,6 +310,7 @@ GameObject:
   - 114: {fileID: 773176528}
   - 95: {fileID: 773176531}
   - 114: {fileID: 773176532}
+  - 114: {fileID: 773176533}
   m_Layer: 5
   m_Name: New Game Button
   m_TagString: Untagged
@@ -373,7 +374,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 773176529}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 773176533}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &773176529
@@ -431,9 +444,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29ac87c8377e44448e6093233110fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathDepth: -5
   movementSpeed: 5
-  jumpSpeed: 12
+  jumpHeight: 120
+  cooldown: .5
   arrowPrefab: {fileID: 0}
+--- !u!114 &773176533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773176526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c61a854da63f214f8813060a07a003f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &802754067
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +539,7 @@ GameObject:
   - 114: {fileID: 1078268969}
   - 95: {fileID: 1078268973}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Load Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,7 +690,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Quit Game
 --- !u!222 &1079393122
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -792,8 +818,9 @@ GameObject:
   - 114: {fileID: 2024592870}
   - 114: {fileID: 2024592869}
   - 95: {fileID: 2024592872}
+  - 114: {fileID: 2024592873}
   m_Layer: 5
-  m_Name: Button 1
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -855,7 +882,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2024592870}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2024592873}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2024592870
@@ -902,6 +941,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2024592873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2024592867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aaf2ae45607ba24e96133cf174be2e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2054447830
 GameObject:
   m_ObjectHideFlags: 0
