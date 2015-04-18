@@ -145,7 +145,8 @@ public class PlayerMovement : MonoBehaviour {
         mousePos.z = -mainCamera.transform.position.z;
         mousePos = mainCamera.ScreenToWorldPoint(mousePos);
 
-            bowAnimator.SetTrigger("Shoot");
+            
+
 		if (Input.GetButtonDown("Pause")){
 			cooldown = 0.2f;
 			pausemanager.Pause ();
@@ -181,6 +182,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
 				animator.SetTrigger ("Shoot");
+			bowAnimator.SetTrigger("Shoot");
 			}
 
 					
