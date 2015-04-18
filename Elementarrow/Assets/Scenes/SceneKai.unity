@@ -366,7 +366,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
+  m_Color: {r: 1, g: .940817773, b: .779411793, a: 1}
   m_Intensity: .300000012
   m_Range: 10
   m_SpotAngle: 30
@@ -395,7 +395,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1183498281}
-  m_LocalRotation: {x: .246484861, y: -.537268817, z: .00649668928, w: .806563914}
+  m_LocalRotation: {x: .253095448, y: -.574966311, z: .775366783, w: -.06452021}
   m_LocalPosition: {x: -1.56599998, y: 5.26000023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -581,7 +581,7 @@ MonoBehaviour:
   movementSpeed: 5
   jumpHeight: 260
   cooldown: .5
-  arrowPrefab: {fileID: 126402, guid: af234b5bbe981944ca3b1f119166c40a, type: 2}
+  arrowPrefab: {fileID: 119914, guid: 0b840e9cc32fb9340b57b2a115001d3e, type: 2}
 --- !u!1001 &1876805979
 Prefab:
   m_ObjectHideFlags: 0
