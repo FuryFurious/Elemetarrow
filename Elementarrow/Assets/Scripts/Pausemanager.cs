@@ -25,6 +25,7 @@ public class Pausemanager : MonoBehaviour {
 	public void Pause()
 	{
 		canvas.enabled = !canvas.enabled;
+		PlayerMovement.paused = !PlayerMovement.paused;
 		Time.timeScale = Time.timeScale == 0 ? 1 : 0;
 	}
 	

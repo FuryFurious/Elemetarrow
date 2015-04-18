@@ -144,26 +144,18 @@ public class PlayerMovement : MonoBehaviour {
         mousePos = mainCamera.ScreenToWorldPoint(mousePos);
 
 		if (Input.GetButtonDown("Pause")){
-			cooldown = 0.1f;
-			paused = !paused;
+			cooldown = 0.2f;
 			pausemanager.Pause ();
 		}
 
         
 
 		if (Input.GetAxis ("MouseScrollWheelDown") > 0.9) {
-			curSkill = (curSkill-1);
+			curSkill = (curSkill - 1);
 
-			if (curSkill < 0){
-					curSkill = maxSkill-1;
+			if (curSkill < 0) {
+				curSkill = maxSkill - 1;
 			}
-        if (Input.GetButtonDown("Fire1") && cooldown <= 0.0f)
-        {
-            animator.SetTrigger("Shoot");
-        }
-
-					
-
 
 		}
 		if (Input.GetAxis ("MouseScrollWheelUp") > 0.9) {
@@ -172,53 +164,53 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (curSkill == 0)
 			arrowPrefab = normalArrow;
-
+		
 		if (curSkill == 1)
 			arrowPrefab = fireArrow;
-
+		
 		if (curSkill == 2)
 			arrowPrefab = normalArrow;
 
-		if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
-				
-				
-
-				Vector3 fromTo = mousePos - transform.position;
-				float rotation = Mathf.Atan2 (fromTo.y, fromTo.x) * Mathf.Rad2Deg;
-
-				GameObject obj = (GameObject)Instantiate (arrowPrefab, transform.position, Quaternion.identity);
-				//obj.transform.position = transform.position;
-				ArrowMovement arrow = obj.GetComponent<ArrowMovement> ();
-				arrow.direction = new Vector2 (fromTo.x, fromTo.y);
-
-				cooldown = totalCooldown;
-				//Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);
-		}
-
-        if (mousePos.x < transform.position.x && direction == LookDirection.Right)
-        {
-            direction = LookDirection.Left;
-            mesh.transform.rotation = Quaternion.Euler(0.0f, 270.0f, 0.0f);
-        }
-
-        else if (mousePos.x > transform.position.x && direction == LookDirection.Left)
-        {
-            direction = LookDirection.Right;
-            mesh.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-        }
 
 
 
-        if(cooldown > 0.0f)
-            cooldown -= Time.deltaTime;
+
+
+			if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
+				animator.SetTrigger ("Shoot");
+			}
+
+					
+
+
+		
+
+
+
+
+
+
+			if (mousePos.x < transform.position.x && direction == LookDirection.Right) {
+				direction = LookDirection.Left;
+				mesh.transform.rotation = Quaternion.Euler (0.0f, 270.0f, 0.0f);
+			} else if (mousePos.x > transform.position.x && direction == LookDirection.Left) {
+				direction = LookDirection.Right;
+				mesh.transform.rotation = Quaternion.Euler (0.0f, 90.0f, 0.0f);
+			}
+
+
+
+			if (cooldown > 0.0f)
+				cooldown -= Time.deltaTime;
 
 
      
-		if (transform.position.y <= deathDepth) {
+			if (transform.position.y <= deathDepth) {
 				//  Debug.Log(transform.position.y);
 
-            transform.position = new Vector3(SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
-        }
+				transform.position = new Vector3 (SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
+			}
+
     }
 
     public void CreateShootArrow()
