@@ -3,8 +3,8 @@ using System.Collections;
 
 public class IdleRandom : StateMachineBehaviour {
 
-    private float cooldown = 1.5f;
-    private float currentCooldown = 1.5f;
+    private float cooldown = 1.0f;
+    private float currentCooldown = 1.0f;
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	//override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 	//
@@ -19,7 +19,7 @@ public class IdleRandom : StateMachineBehaviour {
         {
             currentCooldown = cooldown;
 
-            if (Random.value > 0.75f)
+            if (Random.value > 0.25f)
                 animator.SetTrigger("IdleStart");
         }
 	}
