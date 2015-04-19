@@ -9,9 +9,9 @@ public class LevelHandler  : MonoBehaviour{
 
     void Start()
     {
-        currentSpawnposition = new Vector3(-4.725304f, 2.004747f, -0.466938f);
+        currentSpawnposition = new Vector3(0.5f, 1, 0);
 
-        levelName = "SceneKai";
+        levelName = "Level1";
 
         DontDestroyOnLoad(this.gameObject);
 
