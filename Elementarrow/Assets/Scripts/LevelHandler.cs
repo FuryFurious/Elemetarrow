@@ -47,7 +47,7 @@ public class LevelHandler  : MonoBehaviour{
                 currentSpawnposition = new Vector3(-6.15f, 1, 0);
                 break;
             case "Level4":
-                currentSpawnposition = new Vector3(-6.15f, 1, 0);
+                currentSpawnposition = new Vector3(0.8f, 0.4f, 0);
                 break;
 
 
