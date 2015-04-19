@@ -5,6 +5,8 @@ public class SavePoint : MonoBehaviour {
     public static SavePoint currentActivePoint;
     public static Vector2 currentSpawnpoint;
 
+
+
     private ParticleSystem particleSystem;
     private bool isActive = false;
     private Transform spawnPoint;
@@ -19,8 +21,11 @@ public class SavePoint : MonoBehaviour {
 
             SavePoint.currentActivePoint = this;
             SavePoint.currentSpawnpoint = new Vector2(spawnPoint.position.x, spawnPoint.position.y);
+            GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition = new Vector2(spawnPoint.position.x, spawnPoint.position.y);
 
             SetAllActive(true);
+
+            Debug.Log("Lallala");
         }
     }
 
@@ -35,4 +40,7 @@ public class SavePoint : MonoBehaviour {
         isActive = val;
         particleSystem.gameObject.SetActive(val);
     }
+
+
+    
 }

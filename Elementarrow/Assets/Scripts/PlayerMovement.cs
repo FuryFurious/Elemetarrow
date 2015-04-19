@@ -57,7 +57,14 @@ public class PlayerMovement : MonoBehaviour {
 		curPoints = 0;
 
 
-        SavePoint.currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
+        if (GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition != null)
+            transform.position = new Vector3(GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition.x, GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition.y, GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition.z);
+        else
+        {
+
+            GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition = transform.position;
+        }
+        //GameObject.FindObjectOfType<LevelHandler>().currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
 
     }
 	
@@ -203,7 +210,10 @@ public class PlayerMovement : MonoBehaviour {
 			if (transform.position.y <= deathDepth) {
 				//  Debug.Log(transform.position.y);
 
-				transform.position = new Vector3 (SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
+				//transform.position = new Vector3 (LevelHandler.currentSpawnposition.x, LevelHandler.currentSpawnposition.y, 0);
+
+                GameObject.FindObjectOfType<LevelHandler>().resetLevel();
+
 			}
 
     }
