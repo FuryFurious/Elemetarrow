@@ -2,31 +2,38 @@ Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 850M   (ID=0x1391)
-    Vendor:   NVIDIA
-    VRAM:     3072 MB
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     128 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.125 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.096 seconds
+desktop: 1360x768 60Hz; virtual: 1360x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Jarek\Desktop\Elementarrow\Elemetarrow\Elementarrow\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Kai\Desktop\Elemetarrow\Elementarrow\test_Data\Managed\System.dll (this message is harmless)
 The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1713)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2c68 -> priority: 1 
+  Thread -> id: 1b00 -> priority: 1 
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at PlayerMovement.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
 ArgumentException: The thing you want to instantiate is null.
   at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
   at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
@@ -35,66 +42,10 @@ ArgumentException: The thing you want to instantiate is null.
 (Filename:  Line: -1)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.337262 ms
+UnloadTime: 54.946243 ms
 
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 175.
-Total: 0.526442 ms (FindLiveObjects: 0.029508 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.227512 ms  DeleteObjects: 0.247611 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.706484 ms
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 233.
-Total: 0.309621 ms (FindLiveObjects: 0.022238 ms CreateObjectMapping: 0.017961 ms MarkObjects: 0.245045 ms  DeleteObjects: 0.023948 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 233.
+Total: 1.664864 ms (FindLiveObjects: 0.880325 ms CreateObjectMapping: 0.010833 ms MarkObjects: 0.623184 ms  DeleteObjects: 0.149381 ms)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 30b4 -> priority: 1 
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ArrowMovement.OnTriggerEnter2D (UnityEngine.Collider2D collider) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
+  Thread -> id: 1b30 -> priority: 1 
