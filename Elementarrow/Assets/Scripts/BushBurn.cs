@@ -36,7 +36,7 @@ public class BushBurn : MonoBehaviour {
             if (gameObject.GetComponent<MeshRenderer>().material.color.a <= 0.35f)
             {
                 fire.GetComponent<ParticleSystem>().enableEmission = false;
-                gameObject.transform.FindChild("PlayerCollidingBox").gameObject.SetActive(false);
+                gameObject.transform.FindChild("BushBoxColl").gameObject.SetActive(false);
             }
 
             if (gameObject.GetComponent<MeshRenderer>().material.color.a <= 0.1)
