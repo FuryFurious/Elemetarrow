@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour {
 			arrowPrefab = fireArrow;
 		
 		if (curSkill == 2)
-			arrowPrefab = normalArrow;
+			arrowPrefab = airArrow;
 
 
 
