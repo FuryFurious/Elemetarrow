@@ -20,7 +20,7 @@ public class IdleRandom : StateMachineBehaviour {
             currentCooldown = cooldown;
 
             if (Random.value > 0.25f)
-                animator.SetTrigger("IdleStart");
+                animator.SetTrigger("Idle");
         }
 	}
 
