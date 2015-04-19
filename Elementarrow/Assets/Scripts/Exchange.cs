@@ -30,8 +30,7 @@ public class Exchange : MonoBehaviour {
     void FixedUpdate () 
     {
         position = player.transform.position;
-
-        if (Input.GetButtonDown("Submit") && exchangeble == true)
+        if (Input.GetMouseButtonDown(1) && exchangeble == true)
         {
             player.transform.position = transform.position;
             transform.position = position;
