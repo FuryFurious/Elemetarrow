@@ -34,10 +34,7 @@ public class BushBurn : MonoBehaviour {
             gameObject.GetComponent<MeshRenderer>().material.color -= new Color(0, 0, 0, Time.deltaTime/5);
 
             if (gameObject.GetComponent<MeshRenderer>().material.color.a <= 0.35f)
-            {
                 fire.GetComponent<ParticleSystem>().enableEmission = false;
-                gameObject.transform.FindChild("PlayerCollidingBox").gameObject.SetActive(false);
-            }
 
             if (gameObject.GetComponent<MeshRenderer>().material.color.a <= 0.1)
                 Destroy(gameObject);
@@ -49,7 +46,7 @@ public class BushBurn : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.CompareTag("FireArrow") && collider.isTrigger)
+        if(collider.CompareTag("FireArrow"))
         {
 
             burned = true;
