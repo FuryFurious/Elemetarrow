@@ -140,6 +140,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11438196, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 415788, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -188,6 +192,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .00728850858
       objectReference: {fileID: 0}
+    - target: {fileID: 11438196, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b1db9ddaf5e9414eac8071e55405597, type: 3}
+    - target: {fileID: 11438196, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
+      propertyPath: shootingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b1db9ddaf5e9414eac8071e55405597, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
   m_IsPrefabParent: 0

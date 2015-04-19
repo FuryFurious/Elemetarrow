@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	enum LookDirection {Left, Right };
 
+	public AudioClip shootingSound;
+
 	// Use this for initialization
     void Start()
     {
@@ -228,6 +230,9 @@ public class PlayerMovement : MonoBehaviour {
 
             cooldown = totalCooldown;
             //Debug.DrawRay(transform.position ,fromTo, Color.red, 1.0f);
+
+			//sound for shooting
+			AudioSource.PlayClipAtPoint(shootingSound, transform.position, 1f);
         }
     }
 }
