@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Pausemanager pausemanager;
 	private  int maxSkill = 3;
 
+
+
     private Animator animator;
     private GameObject mesh;
     private Vector3 mousePos;
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public static bool paused;
 	public static int curSkill;
+	public static int curPoints;
 
 	enum LookDirection {Left, Right };
 
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour {
 		pausemanager = FindObjectOfType (typeof(Pausemanager)) as Pausemanager;
 		paused = false;
 		curSkill = 0;
+		curPoints = 0;
 
 
         SavePoint.currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
@@ -176,24 +180,10 @@ public class PlayerMovement : MonoBehaviour {
 			arrowPrefab = airArrow;
 
 
-
-
-
-
 			if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
 				animator.SetTrigger ("Shoot");
 			bowAnimator.SetTrigger("Shoot");
 			}
-
-					
-
-
-		
-
-
-
-
-
 
 			if (mousePos.x < transform.position.x && direction == LookDirection.Right) {
 				direction = LookDirection.Left;
