@@ -9,10 +9,9 @@ public class LevelHandler  : MonoBehaviour{
 
     void Start()
     {
-        currentSpawnposition = new Vector3(-4.725304f, 2.004747f, -0.466938f);
-
-        levelName = "SceneKai";
-
+        currentSpawnposition = new Vector3(0.5f, 1, -0);
+        //currentSpawnposition = new Vector3(-4.725304f, 2.004747f, 0);
+        levelName = "Level1";
         DontDestroyOnLoad(this.gameObject);
 
         resetLevel();
@@ -40,8 +39,11 @@ public class LevelHandler  : MonoBehaviour{
 
         switch (levelNameKKK)
         {
-            case "SceneGerd":
-                currentSpawnposition = new Vector3(-4.725304f, 2.004747f, -0.466938f);
+            case "Level1":
+                currentSpawnposition = new Vector3(0.5f, 1, -0);
+                break;
+            case "LevelKaGe":
+                currentSpawnposition = new Vector3(0.1f, 2.004747f, 0);
                 break;
             case "SceneLisa":
                 currentSpawnposition = new Vector3(-6.15f, 1, 0);
