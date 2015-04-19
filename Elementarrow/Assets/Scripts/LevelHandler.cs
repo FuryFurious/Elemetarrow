@@ -9,13 +9,16 @@ public class LevelHandler  : MonoBehaviour{
 
     void Start()
     {
-        currentSpawnposition = new Vector3(-4.725304f, 2.004747f, -0.466938f);
+        currentSpawnposition = new Vector3(0, 0, -0);
 
-        levelName = "SceneKai";
+        levelName = "LevelKaGe";
 
         DontDestroyOnLoad(this.gameObject);
 
         resetLevel();
+
+        
+        //GameObject.Find("Directional light").gameObject
     }
 
 
@@ -47,6 +50,9 @@ public class LevelHandler  : MonoBehaviour{
                 currentSpawnposition = new Vector3(-6.15f, 1, 0);
                 break;
             case "Level4":
+                currentSpawnposition = new Vector3(0.8f, 0.4f, 0);
+                break;
+            case "LevelKaGe":
                 currentSpawnposition = new Vector3(0.8f, 0.4f, 0);
                 break;
 
