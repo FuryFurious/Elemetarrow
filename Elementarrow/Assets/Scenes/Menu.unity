@@ -335,7 +335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!1 &264935183
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ Transform:
   m_PrefabParentObject: {fileID: 445404, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 267364858}
-  m_LocalRotation: {x: .707069278, y: .00728841359, z: .707069159, w: .00728850765}
+  m_LocalRotation: {x: .707069337, y: .00728841126, z: .707069218, w: .00728850532}
   m_LocalPosition: {x: -5.33418021e-09, y: .00126392068, z: -.122031815}
   m_LocalScale: {x: 1.00000012, y: 1.00000036, z: 1.00000012}
   m_Children: []
@@ -659,6 +659,8 @@ Terrain:
     serializedVersion: 2
     rgba: 4286545791
   m_LegacyShininess: .078125
+  m_UseDefaultSmoothness: 1
+  m_DefaultSmoothness: 0
   m_MaterialTemplate: {fileID: 0}
   m_BakeLightProbesForTrees: 1
   m_ScaleInLightmap: .0511999987
@@ -674,7 +676,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &584368042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1009,7 @@ GameObject:
   - 114: {fileID: 773176532}
   - 114: {fileID: 773176533}
   - 114: {fileID: 773176534}
+  - 114: {fileID: 773176535}
   m_Layer: 5
   m_Name: New Game Button
   m_TagString: Untagged
@@ -1077,9 +1080,9 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 2
+          m_IntArgument: 8
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: '"Level1"'
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1149,6 +1152,7 @@ MonoBehaviour:
   airArrow: {fileID: 0}
   arrowStartTransform: {fileID: 0}
   bowAnimator: {fileID: 0}
+  shootingSound: {fileID: 0}
 --- !u!114 &773176533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1175,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c43c08442543b4f8650e3a3f5503c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &773176535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773176526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f125ef00c6d91f48bc61bf5403773d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSwitchName: Level1
 --- !u!1 &804188264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1958,7 +1974,7 @@ Transform:
   m_Children:
   - {fileID: 461455908}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &1669819676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1981,6 +1997,7 @@ MonoBehaviour:
   airArrow: {fileID: 160728, guid: 16630ab3567ecf54b87cdc7398b9267b, type: 2}
   arrowStartTransform: {fileID: 1112429286}
   bowAnimator: {fileID: 26856753}
+  shootingSound: {fileID: 0}
 --- !u!50 &1669819677
 Rigidbody2D:
   m_ObjectHideFlags: 0

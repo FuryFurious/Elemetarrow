@@ -176,7 +176,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
       propertyPath: m_Intensity
-      value: .899999976
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
+      propertyPath: m_BounceIntensity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 721ee4fa542759346a800b4005929bea, type: 2}
@@ -242,10 +250,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
       propertyPath: m_Intensity
-      value: .899999976
+      value: .25
       objectReference: {fileID: 0}
     - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
       propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
+      propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -312,10 +324,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
       propertyPath: m_Intensity
-      value: .699999988
+      value: .25
       objectReference: {fileID: 0}
     - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
       propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10882008, guid: 721ee4fa542759346a800b4005929bea, type: 2}
+      propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
