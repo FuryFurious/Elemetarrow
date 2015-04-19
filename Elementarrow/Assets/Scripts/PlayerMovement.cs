@@ -122,10 +122,6 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetBool("RunBack", false);
         }
 
-
-
-        
-
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             animator.SetTrigger("Jump");
@@ -140,6 +136,10 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetTrigger("Land");
             isJumping = false;
 
+        }
+
+        if(coll.gameObject.layer == 13){
+            //TODO: enemy got hit by enemy
         }
     }
 
@@ -182,7 +182,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
 				animator.SetTrigger ("Shoot");
-			bowAnimator.SetTrigger("Shoot");
+			    bowAnimator.SetTrigger("Shoot");
 			}
 
 			if (mousePos.x < transform.position.x && direction == LookDirection.Right) {
@@ -212,8 +212,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (cooldown <= 0.0f)
         {
-            Debug.Log("Shot");
-
             Vector3 fromTo = mousePos - transform.position;
             float length = new Vector2(fromTo.x, fromTo.y).magnitude;
             float rotation = Mathf.Atan2(fromTo.y, fromTo.x) * Mathf.Rad2Deg;
