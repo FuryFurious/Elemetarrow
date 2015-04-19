@@ -46,7 +46,7 @@ public class BushBurn : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.CompareTag("FireArrow"))
+        if(collider.CompareTag("FireArrow") && collider.isTrigger)
         {
 
             burned = true;
