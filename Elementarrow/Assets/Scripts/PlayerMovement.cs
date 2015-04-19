@@ -222,8 +222,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (cooldown <= 0.0f)
         {
-            Debug.Log("Shot");
-
             Vector3 fromTo = mousePos - transform.position;
             float length = new Vector2(fromTo.x, fromTo.y).magnitude;
             float rotation = Mathf.Atan2(fromTo.y, fromTo.x) * Mathf.Rad2Deg;
