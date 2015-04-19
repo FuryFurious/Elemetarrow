@@ -386,6 +386,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 415788, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab18a1a9d4437e44bbd567353e5f7fb9, type: 2}
   m_IsPrefabParent: 0
@@ -426,7 +430,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485364, guid: 2386f6ad9bc52d542963aa4bd25570cf, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 136122, guid: 2386f6ad9bc52d542963aa4bd25570cf, type: 2}
       propertyPath: m_Name
@@ -1918,7 +1922,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22407826, guid: ab4d7f427b73e4743b7ae4120ee3dde4, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22407826, guid: ab4d7f427b73e4743b7ae4120ee3dde4, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2083,7 +2087,7 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!4 &2132763945 stripped
+--- !u!4 &2132763945
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 2ee76fd3e38c61d42b876138d4c4bc26, type: 3}
   m_PrefabInternal: {fileID: 1449504351}
