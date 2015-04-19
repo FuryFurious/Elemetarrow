@@ -9,10 +9,8 @@ public class LevelHandler  : MonoBehaviour{
 
     void Start()
     {
-        currentSpawnposition = new Vector3(0.5f, 1, 0);
-
+        currentSpawnposition = new Vector3(0.5f, 1, -0.466938f);
         levelName = "Level1";
-
         DontDestroyOnLoad(this.gameObject);
 
         resetLevel();
