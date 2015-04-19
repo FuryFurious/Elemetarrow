@@ -13,6 +13,13 @@ public class Exchange : MonoBehaviour {
         particleSystem = transform.FindChild("ParticleStart").gameObject;
         player = GameObject.Find("Player");
         position = player.transform.position;
+        var rend = GetComponent<Renderer>();
+	
+	    // Set specular shader
+        rend.material.shader = Shader.Find("Standard");
+	
+	    // Set red specular highlights
+        rend.material.SetColor("Emission", Color.white);
 	}
 
     void OnTriggerEnter2D(Collider2D col)
@@ -30,8 +37,7 @@ public class Exchange : MonoBehaviour {
     void FixedUpdate () 
     {
         position = player.transform.position;
-
-        if (Input.GetButtonDown("Submit") && exchangeble == true)
+        if (Input.GetMouseButtonDown(1) && exchangeble == true)
         {
             player.transform.position = transform.position;
             transform.position = position;

@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Pausemanager pausemanager;
 	private  int maxSkill = 3;
 
+
+
     private Animator animator;
     private GameObject mesh;
     private Vector3 mousePos;
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public static bool paused;
 	public static int curSkill;
+	public static int curPoints;
 
 	enum LookDirection {Left, Right };
 
@@ -53,9 +56,17 @@ public class PlayerMovement : MonoBehaviour {
 		pausemanager = FindObjectOfType (typeof(Pausemanager)) as Pausemanager;
 		paused = false;
 		curSkill = 0;
+		curPoints = 0;
 
 
-        SavePoint.currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
+        if (GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition != null)
+            transform.position = new Vector3(GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition.x, GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition.y, GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition.z);
+        else
+        {
+
+            GameObject.FindObjectOfType<LevelHandler>().currentSpawnposition = transform.position;
+        }
+        //GameObject.FindObjectOfType<LevelHandler>().currentSpawnpoint = new Vector2(transform.position.x, transform.position.y);
 
     }
 	
@@ -178,16 +189,10 @@ public class PlayerMovement : MonoBehaviour {
 			arrowPrefab = airArrow;
 
 
-
-
-
-
 			if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
 				animator.SetTrigger ("Shoot");
 			    bowAnimator.SetTrigger("Shoot");
 			}
-
-				
 
 			if (mousePos.x < transform.position.x && direction == LookDirection.Right) {
 				direction = LookDirection.Left;
@@ -207,7 +212,10 @@ public class PlayerMovement : MonoBehaviour {
 			if (transform.position.y <= deathDepth) {
 				//  Debug.Log(transform.position.y);
 
-				transform.position = new Vector3 (SavePoint.currentSpawnpoint.x, SavePoint.currentSpawnpoint.y, 0);
+				//transform.position = new Vector3 (LevelHandler.currentSpawnposition.x, LevelHandler.currentSpawnposition.y, 0);
+
+                GameObject.FindObjectOfType<LevelHandler>().resetLevel();
+
 			}
 
     }

@@ -23,8 +23,10 @@ public class GetPoints : MonoBehaviour {
             //GameObject xd =light.transform.FindChild("Light").gameObject;
 
             //xd.s
-
+			PlayerMovement.curPoints++;
+			CollectiblesUI.smallCounter++;
             Destroy(gameObject);
+
         }
 
 
