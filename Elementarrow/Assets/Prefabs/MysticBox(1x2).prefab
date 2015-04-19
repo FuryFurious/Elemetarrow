@@ -30,6 +30,7 @@ GameObject:
   - 61: {fileID: 6178982}
   - 50: {fileID: 5069544}
   - 114: {fileID: 11423222}
+  - 114: {fileID: 11496600}
   m_Layer: 10
   m_Name: MysticBox(1x2)
   m_TagString: Untagged
@@ -191,6 +192,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d991c505f9ee8e44b2d22a04b459a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11496600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c64a8ed45aa49748a14da6522474d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &19820384

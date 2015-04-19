@@ -29,6 +29,7 @@ GameObject:
   - 114: {fileID: 11479508}
   - 61: {fileID: 6125598}
   - 50: {fileID: 5088352}
+  - 114: {fileID: 11460444}
   m_Layer: 10
   m_Name: Switch
   m_TagString: Untagged
@@ -120,6 +121,17 @@ BoxCollider2D:
   m_Offset: {x: .610000014, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.38, y: .140000001}
+--- !u!114 &11460444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c64a8ed45aa49748a14da6522474d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11463188
 MonoBehaviour:
   m_ObjectHideFlags: 1

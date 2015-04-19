@@ -141,14 +141,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if(coll.gameObject.layer.Equals(10)){
-            animator.SetTrigger("Land");
-            isJumping = false;
-
-        }
-
         if(coll.gameObject.layer == 13){
-            //TODO: enemy got hit by enemy
+            GameObject.FindObjectOfType<LevelHandler>().resetLevel();
         }
     }
 
@@ -218,6 +212,13 @@ public class PlayerMovement : MonoBehaviour {
 
 			}
 
+    }
+
+    public void ResetJump()
+    {
+
+        animator.SetTrigger("Land");
+        isJumping = false;
     }
 
     public void CreateShootArrow()
