@@ -11,14 +11,31 @@ public class ArrowMovement : MonoBehaviour {
 
     private bool isFlying = true;
     private Rigidbody2D _rigidBody;
+    private MeshRenderer renderer;
+    private ParticleSystem particleSystem;
 
 	// Use this for initialization
-	void Start () {
+    void Start()
+    {
 
         startLifeTime = lifeTime;
         _rigidBody = GetComponent<Rigidbody2D>();
         _rigidBody.AddForce(direction * speed);
-	}
+
+        renderer = gameObject.transform.FindChild("arrow").gameObject.GetComponent<MeshRenderer>();
+
+        if (name.Equals("ArrowFire(Clone)"))
+        {
+            particleSystem = transform.FindChild("FireMobile").GetComponent<ParticleSystem>();
+        }
+
+        else if (name.Equals("ArrowAerial(Clone)"))
+        {
+            particleSystem = transform.FindChild("Particle System").GetComponent<ParticleSystem>();
+        }
+
+    }
+
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -35,9 +52,23 @@ public class ArrowMovement : MonoBehaviour {
     {
         lifeTime -= Time.deltaTime;
 
-        Color colorX = gameObject.GetComponent<MeshRenderer>().material.color;
+        float startFade = 0.2f;
+        float t = (lifeTime / startLifeTime);
 
-        gameObject.GetComponent<MeshRenderer>().material.color = new Color(colorX.r, colorX.g, colorX.b, 255 / startLifeTime * lifeTime);
+        if (t <= startFade)
+        {
+            t /= startFade;
+
+            Color colorX = renderer.material.color;
+            renderer.material.color = new Color(colorX.r, colorX.g, colorX.b, t);
+
+
+            if (particleSystem != null)
+            {
+                particleSystem.enableEmission = false;
+            }
+        }
+
 
         if (lifeTime <= 0)
             Destroy(gameObject);
@@ -46,18 +77,24 @@ public class ArrowMovement : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider)
     {
 
-        if (!collider.CompareTag("BushCollider"))
+        ArrowTarget target = collider.GetComponent<ArrowTarget>();
+
+
+        if (target != null)
         {
-            isFlying = false;
-
-            if (!collider.gameObject.isStatic)
+            if (!collider.CompareTag("BushCollider"))
             {
-                collider.attachedRigidbody.AddForce(_rigidBody.velocity * 5.0f);
-                gameObject.transform.parent = collider.transform;
+                isFlying = false;
+
+                if (!collider.gameObject.isStatic)
+                {
+                    collider.attachedRigidbody.AddForce(_rigidBody.velocity * 5.0f);
+                    gameObject.transform.parent = collider.transform;
+                }
+
+                _rigidBody.isKinematic = true;
+
             }
-
-            _rigidBody.isKinematic = true;
-
         }
     }
 }
