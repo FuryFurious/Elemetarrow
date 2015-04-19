@@ -118,10 +118,6 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetBool("RunBack", false);
         }
 
-
-
-        
-
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             animator.SetTrigger("Jump");
@@ -136,6 +132,10 @@ public class PlayerMovement : MonoBehaviour {
             animator.SetTrigger("Land");
             isJumping = false;
 
+        }
+
+        if(coll.gameObject.layer == 13){
+            //TODO: enemy got hit by enemy
         }
     }
 
@@ -182,18 +182,10 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (Input.GetButtonDown ("Fire1") && cooldown <= 0.0f) {
 				animator.SetTrigger ("Shoot");
-			bowAnimator.SetTrigger("Shoot");
+			    bowAnimator.SetTrigger("Shoot");
 			}
 
-					
-
-
-		
-
-
-
-
-
+				
 
 			if (mousePos.x < transform.position.x && direction == LookDirection.Right) {
 				direction = LookDirection.Left;

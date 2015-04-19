@@ -79,6 +79,8 @@ public class ArrowMovement : MonoBehaviour {
 
         ArrowTarget target = collider.GetComponent<ArrowTarget>();
 
+        BoarBehave behave = collider.gameObject.GetComponent<BoarBehave>();
+
 
         if (target != null)
         {
@@ -93,8 +95,15 @@ public class ArrowMovement : MonoBehaviour {
                 }
 
                 _rigidBody.isKinematic = true;
-
             }
+        }
+
+        if (behave != null && !_rigidBody.isKinematic)
+        {
+            behave.hitPoints--;
+
+            if (behave.hitPoints <= 0)
+                Destroy(behave.gameObject);
         }
     }
 }
